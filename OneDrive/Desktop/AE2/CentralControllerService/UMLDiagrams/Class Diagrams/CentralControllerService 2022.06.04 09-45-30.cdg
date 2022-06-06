@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CentralControllerService">
+  <ClassDiagramComponents>
+    <Class name="CountryResource" package="rest.ticket.system.controller" visibility="public" xPosition="674.0" yPosition="1607.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getCoutries" returnType="List&lt;Country&gt;" visibility="public"/>
+        <Method name="getCountryInfo" returnType="Country" visibility="public">
+          <Argument type="String" name="countryCode"/>
+        </Method>
+        <Method name="addCountry" returnType="Country" visibility="public">
+          <Argument type="Country" name="country"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GateController" package="rest.ticket.system.controller" visibility="public" xPosition="566.0" yPosition="29.0">
+      <Fields>
+        <Field name="service" type="GateServiceImpli" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="test" returnType="Gate" visibility="public"/>
+        <Method name="save" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+        </Method>
+        <Method name="get" returnType="Gate" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Gate&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StationController" package="rest.ticket.system.controller" visibility="public" xPosition="1507.0" yPosition="17.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getstation" returnType="Stations" visibility="public"/>
+        <Method name="getAmachine" returnType="Stations" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="ArrayList&lt;Stations&gt;" visibility="public"/>
+        <Method name="save" returnType="String" visibility="public">
+          <Argument type="Stations" name="st"/>
+        </Method>
+        <Method name="delete" returnType="String" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TicketMachineController" package="rest.ticket.system.controller" visibility="public" xPosition="227.0" yPosition="954.0">
+      <Fields>
+        <Field name="service" type="TicketMachineServiceImpli" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="test" returnType="Zone" visibility="public"/>
+        <Method name="save" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="gate"/>
+        </Method>
+        <Method name="get" returnType="TicketMachine" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;TicketMachine&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ZoneController" package="rest.ticket.system.controller" visibility="public" xPosition="1472.0" yPosition="426.0">
+      <Fields>
+        <Field name="service" type="ZoneServiceImpli" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="test" returnType="Zone" visibility="public"/>
+        <Method name="save" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+        </Method>
+        <Method name="get" returnType="Zone" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Zone&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GateDao" package="rest.ticket.system.dao" visibility="public" xPosition="227.0" yPosition="287.0">
+      <Fields>
+        <Field name="session" type="Session" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Gate" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Gate&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StationDao" package="rest.ticket.system.dao" visibility="public" xPosition="1788.0" yPosition="586.0">
+      <Fields>
+        <Field name="session" type="Session" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="Stations" visibility="public">
+          <Argument type="Stations" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Stations" visibility="public">
+          <Argument type="Stations" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Stations" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Stations&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TicketMachineDao" package="rest.ticket.system.dao" visibility="public" xPosition="581.0" yPosition="690.0">
+      <Fields>
+        <Field name="session" type="Session" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="gate"/>
+        </Method>
+        <Method name="update" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="ticket"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="TicketMachine" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;TicketMachine&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ZoneDao" package="rest.ticket.system.dao" visibility="public" xPosition="1262.0" yPosition="690.0">
+      <Fields>
+        <Field name="session" type="Session" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Zone" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Zone&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Country" package="rest.ticket.system.model" visibility="public" xPosition="1073.0" yPosition="33.0">
+      <Fields>
+        <Field name="countryId" type="long" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="code" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getCountryId" returnType="long" visibility="public"/>
+        <Method name="setCountryId" returnType="void" visibility="public">
+          <Argument type="long" name="countryId"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getCode" returnType="String" visibility="public"/>
+        <Method name="setCode" returnType="void" visibility="public">
+          <Argument type="String" name="code"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Employee" package="rest.ticket.system.model" visibility="public" xPosition="774.0" yPosition="300.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="empname" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="role" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="empname"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="role"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getEmpname" returnType="String" visibility="public"/>
+        <Method name="setEmpname" returnType="void" visibility="public">
+          <Argument type="String" name="empname"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getRole" returnType="String" visibility="public"/>
+        <Method name="setRole" returnType="void" visibility="public">
+          <Argument type="String" name="role"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gate" package="rest.ticket.system.model" visibility="public" xPosition="458.0" yPosition="271.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="stationName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="stationName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getStationName" returnType="String" visibility="public"/>
+        <Method name="setStationName" returnType="void" visibility="public">
+          <Argument type="String" name="stationName"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Stations" package="rest.ticket.system.model" visibility="public" xPosition="698.0" yPosition="941.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="stationName" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="zonesCost" type="ArrayList&lt;Zone&gt;" visibility="private"/>
+        <Field name="ticketMachines" type="ArrayList&lt;TicketMachine&gt;" visibility="private"/>
+        <Field name="zones" type="ArrayList&lt;Zone&gt;" visibility="private"/>
+        <Field name="peak" type="int" visibility="private"/>
+        <Field name="offpeak" type="int" visibility="private"/>
+        <Field name="employee" type="Employee" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id1"/>
+          <Argument type="ArrayList&lt;String&gt;" name="stationName1"/>
+          <Argument type="ArrayList&lt;Zone&gt;" name="zonesCost1"/>
+          <Argument type="ArrayList&lt;TicketMachine&gt;" name="ticketMachines1"/>
+          <Argument type="ArrayList&lt;Zone&gt;" name="zones1"/>
+          <Argument type="int" name="peak1"/>
+          <Argument type="int" name="offpeak1"/>
+          <Argument type="Employee" name="emp"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getEmployee" returnType="Employee" visibility="public"/>
+        <Method name="setEmployee" returnType="void" visibility="public">
+          <Argument type="Employee" name="employee"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getStationName" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="setStationName" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="stationName"/>
+        </Method>
+        <Method name="getZonesCost" returnType="ArrayList&lt;Zone&gt;" visibility="public"/>
+        <Method name="setZonesCost" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Zone&gt;" name="zonesCost"/>
+        </Method>
+        <Method name="getTicketMachines" returnType="ArrayList&lt;TicketMachine&gt;" visibility="public"/>
+        <Method name="setTicketMachines" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;TicketMachine&gt;" name="ticketMachines"/>
+        </Method>
+        <Method name="getZones" returnType="ArrayList&lt;Zone&gt;" visibility="public"/>
+        <Method name="setZones" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Zone&gt;" name="zones"/>
+        </Method>
+        <Method name="getPeak" returnType="int" visibility="public"/>
+        <Method name="setPeak" returnType="void" visibility="public">
+          <Argument type="int" name="peak"/>
+        </Method>
+        <Method name="getOffpeak" returnType="int" visibility="public"/>
+        <Method name="setOffpeak" returnType="void" visibility="public">
+          <Argument type="int" name="offpeak"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TicketMachine" package="rest.ticket.system.model" visibility="public" xPosition="238.0" yPosition="1213.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="stationName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="stationName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getStationName" returnType="String" visibility="public"/>
+        <Method name="setStationName" returnType="void" visibility="public">
+          <Argument type="String" name="stationName"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Zone" package="rest.ticket.system.model" visibility="public" xPosition="1000.0" yPosition="1693.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="cost" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="int" name="cost"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getCost" returnType="int" visibility="public"/>
+        <Method name="setCost" returnType="void" visibility="public">
+          <Argument type="int" name="cost"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GateServiceImpli" package="rest.ticket.system.serviceImplimenations" visibility="public" xPosition="227.0" yPosition="29.0">
+      <Fields>
+        <Field name="dao" type="GateDao" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Gate" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Gate&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StationServcieImpli" package="rest.ticket.system.serviceImplimenations" visibility="public" xPosition="1788.0" yPosition="856.0">
+      <Fields>
+        <Field name="dao" type="StationDao" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="Stations" visibility="public">
+          <Argument type="Stations" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Stations" visibility="public">
+          <Argument type="Stations" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Stations" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Stations&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TicketMachineServiceImpli" package="rest.ticket.system.serviceImplimenations" visibility="public" xPosition="253.0" yPosition="690.0">
+      <Fields>
+        <Field name="dao" type="TicketMachineDao" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="gate"/>
+        </Method>
+        <Method name="update" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="TicketMachine" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;TicketMachine&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ZoneServiceImpli" package="rest.ticket.system.serviceImplimenations" visibility="public" xPosition="1230.0" yPosition="426.0">
+      <Fields>
+        <Field name="dao" type="ZoneDao" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="save" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Zone" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Zone&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FileHandleUtlities" package="rest.ticket.system.utlities" visibility="public" xPosition="1388.0" yPosition="1645.0">
+      <Fields>
+        <Field name="allStatioDetails" type="ArrayList&lt;Stations&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="JdbcUtil" package="rest.ticket.system.utlities" visibility="public" xPosition="774.0" yPosition="29.0">
+      <Fields>
+        <Field name="registry" type="StandardServiceRegistry" visibility="private" isStatic="true"/>
+        <Field name="sessionFactory" type="SessionFactory" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getSessionFactory" returnType="SessionFactory" visibility="public" isStatic="true"/>
+        <Method name="shutdown" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Interface name="GateServices" package="rest.ticket.system.services" visibility="public" xPosition="458.0" yPosition="1512.0">
+      <Methods>
+        <Method name="save" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Gate" visibility="public">
+          <Argument type="Gate" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Gate" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Gate&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="StationServices" package="rest.ticket.system.services" visibility="public" xPosition="1788.0" yPosition="1082.0">
+      <Methods>
+        <Method name="save" returnType="Stations" visibility="public">
+          <Argument type="Stations" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Stations" visibility="public">
+          <Argument type="Stations" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Stations" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Stations&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="TicketMachineSerices" package="rest.ticket.system.services" visibility="public" xPosition="1788.0" yPosition="1288.0">
+      <Methods>
+        <Method name="save" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="gate"/>
+        </Method>
+        <Method name="update" returnType="TicketMachine" visibility="public">
+          <Argument type="TicketMachine" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="TicketMachine" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;TicketMachine&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ZoneServices" package="rest.ticket.system.services" visibility="public" xPosition="227.0" yPosition="501.0">
+      <Methods>
+        <Method name="save" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+        </Method>
+        <Method name="update" returnType="Zone" visibility="public">
+          <Argument type="Zone" name="gate"/>
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get" returnType="Zone" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getAll" returnType="List&lt;Zone&gt;" visibility="public"/>
+        <Method name="delete" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="zones" source="rest.ticket.system.model.Stations" target="rest.ticket.system.model.Zone" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Zone&gt;"/>
+    <HasRelation name="dao" source="rest.ticket.system.serviceImplimenations.TicketMachineServiceImpli" target="rest.ticket.system.dao.TicketMachineDao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dao" source="rest.ticket.system.serviceImplimenations.ZoneServiceImpli" target="rest.ticket.system.dao.ZoneDao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dao" source="rest.ticket.system.serviceImplimenations.StationServcieImpli" target="rest.ticket.system.dao.StationDao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="employee" source="rest.ticket.system.model.Stations" target="rest.ticket.system.model.Employee" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="allStatioDetails" source="rest.ticket.system.utlities.FileHandleUtlities" target="rest.ticket.system.model.Stations" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Stations&gt;"/>
+    <HasRelation name="service" source="rest.ticket.system.controller.GateController" target="rest.ticket.system.serviceImplimenations.GateServiceImpli" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="zonesCost" source="rest.ticket.system.model.Stations" target="rest.ticket.system.model.Zone" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Zone&gt;"/>
+    <HasRelation name="service" source="rest.ticket.system.controller.ZoneController" target="rest.ticket.system.serviceImplimenations.ZoneServiceImpli" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="service" source="rest.ticket.system.controller.TicketMachineController" target="rest.ticket.system.serviceImplimenations.TicketMachineServiceImpli" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ticketMachines" source="rest.ticket.system.model.Stations" target="rest.ticket.system.model.TicketMachine" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;TicketMachine&gt;"/>
+    <HasRelation name="dao" source="rest.ticket.system.serviceImplimenations.GateServiceImpli" target="rest.ticket.system.dao.GateDao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
