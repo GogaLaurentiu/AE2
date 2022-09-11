@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bookings</title>
+        <link rel="stylesheet" href="../css/bootstrap.css" >
+        <link rel="stylesheet" href="/css/style.css" >
+    </head>
+    <body>
+        <%- include('common/header'); -%>
+        <!-- Bookings form require:
+                - ID of Accommodation
+                - Number of People Staying
+                - Date -->
+        
+		<div id="logreg-forms" class="container-md">
+        	<form action="/" method="post" class="form-signin container-md">
+				<h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Booking Form </h1>
+				<h2 class="h3 mb-3 font-weight-normal" style="text-align: center"> Username </h2>
+
+				<input type="text" id="accID" name="accID" class="form-control" placeholder="accID" required="" autofocus="">
+				<input type="text" id="numP" name="numP" class="form-control" placeholder="number of People" required="">
+				<hr>
+				<button class="btn btn-success btn-block" type="submit" id="signin"><i class="fas fa-sign-in-alt"></i> Book </button>
+			</form>
+    	</div>
+        
+        
+    </body>
+    <script src="../js/bootstrap.bundle.js" ></script>
+</html>

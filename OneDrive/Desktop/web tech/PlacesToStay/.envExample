@@ -1,0 +1,9 @@
+WEB_PORT=3000
+
+# Database Settings
+
+DB_HOST=localhost
+DB_USER=adminUser
+DB_PASSWORD=adminUserPassword
+DB_DATABASE=Databasename
+
